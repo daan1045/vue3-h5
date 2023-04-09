@@ -1,0 +1,63 @@
+<template>
+  <div class="login_wrap">   
+    <img class="bg_img" src="@/assets/images/1.png" alt="">
+    <div class="form_wrap">
+      <img class="bear_img" src="@/assets/images/2.png" alt="">    
+      <!-- 表单 --> 
+      <van-field class="login_input" v-model="userName" placeholder="请输入用户名" />
+  
+      <van-field class="login_input" v-model="password" placeholder="请输入密码" />
+          
+      <van-button class="login_btn" v-if="loginStatus==1" type="primary" @click="handleLogin">登录</van-button>
+      <van-button class="login_btn" v-if="loginStatus==2"  type="primary" @click="handleRegist">注册</van-button>
+      <p class="form_bottom">
+        <span @click="handleChangeStatus">
+          {{
+              loginStatus==1?"去注册":"去登陆" 
+          }}    
+        </span>    
+      </p>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import { showToast } from 'vant'
+import {Options , Vue } from "vue-class-component"
+import {loginApi, registApi} from "@/utils/request"
+// import {useStore} from "vuex"
+// import {useRouter} from "vue-router"
+// import {Toast} from "vant"
+@Options({})
+export default class Login extends Vue {
+  userName:string=""
+  password:string=""
+  // 1的时候是登录  2的时候是注册
+  loginStatus:number = 1
+
+  handleLogin () {
+    loginApi({
+      'userName': this.userName,
+      'userPassword': this.password
+    })
+  }
+  handleRegist () {
+    registApi({
+      'userName': this.userName,
+      'userPassword': this.password
+    }).then((res: any) => {
+      console.log(res)
+      if (res.code === 200) {
+        showToast(res.message || '登录成功')
+      }
+    })
+  }
+  handleChangeStatus () {
+    this.loginStatus=this.loginStatus==1?2:1
+  }
+}
+</script>
+
+<style lang="less" scoped>
+
+</style>

@@ -1,0 +1,58 @@
+/* 全局样式 */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* 引入模块样式 */
+.login_wrap {
+  position: relative;
+  height: 100vh;
+}
+.login_wrap .bg_img {
+  display: block;
+  width: 100%;
+}
+.login_wrap .form_wrap {
+  position: absolute;
+  bottom: 0;
+  top: 540px;
+  width: 100%;
+  background: #dda900;
+  padding: 30px 20px;
+}
+.login_wrap .form_wrap .bear_img {
+  position: absolute;
+  width: 368px;
+  top: -330px;
+  left: 30px;
+}
+.login_wrap .login_input {
+  background: none;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+.login_wrap .login_input input {
+  color: #fff;
+}
+.login_wrap .login_input input::placeholder {
+  color: #fff;
+  opacity: .8;
+}
+.login_wrap .form_bottom {
+  display: flex;
+  justify-content: flex-end;
+  color: #4646c5;
+}
+.login_wrap .login_btn {
+  margin: 0 auto;
+  background: #fff;
+  color: #666;
+  outline: none;
+  border-radius: 50px;
+  border: 1px solid #fff;
+  width: 50%;
+  display: block;
+}
