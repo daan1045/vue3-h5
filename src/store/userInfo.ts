@@ -1,10 +1,18 @@
+const uInfoLocal = localStorage.getItem('uInfo')
+const uInfo = uInfoLocal && JSON.parse(uInfoLocal)
 const state = {
-  uname: 'gdp'
+  ...uInfo
 }
 
 const getters = {}
 
-const mutations = {}
+const mutations = {
+  setUInfo(state:any, info:any) {
+    console.log('info----', info)
+    state.id = info.id
+    state.userName = info.userName
+  }
+}
 
 const actions = {}
 

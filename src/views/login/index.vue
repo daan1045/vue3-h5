@@ -25,7 +25,7 @@
 import { showToast } from 'vant'
 import {Options , Vue } from "vue-class-component"
 import {loginApi, registApi} from "@/utils/request"
-// import {useStore} from "vuex"
+import {useStore} from "vuex"
 // import {useRouter} from "vue-router"
 // import {Toast} from "vant"
 @Options({})
@@ -35,10 +35,18 @@ export default class Login extends Vue {
   // 1的时候是登录  2的时候是注册
   loginStatus:number = 1
 
+  store = useStore()
+
   handleLogin () {
     loginApi({
       'userName': this.userName,
       'userPassword': this.password
+    }).then((res:any) => {
+      if (res.code == 200) {
+        // 把登录信息存储到本地
+        localStorage.setItem('uInfo', JSON.stringify(res.body))
+        this.store.commit('uInfo/setUInfo', res.body)
+      }
     })
   }
   handleRegist () {
