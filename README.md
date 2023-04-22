@@ -41,5 +41,10 @@ cnpm i lib-flexible --save
 npm install px2rem-loader --save-dev
 配置地址 https://www.jianshu.com/p/79be33f2ce88
 
-### vant UI组件库安装
-npm i vant -S
+
+![Image text](https://github.com/daan1045/vue3-h5/blob/master/src/assets/images/10.png)
+
+![Image text](https://github.com/daan1045/vue3-h5/blob/master/src/assets/images/11.png)
+
+## 捐献
+![Image text](https://github.com/daan1045/vue-echarts/blob/master/src/assets/images/3.png)
