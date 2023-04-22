@@ -32,6 +32,24 @@ const routes: Array<RouteRecordRaw> = [
     name: 'goodsCar',
     component: () => import('@/views/goodsCar.vue')
   },
+  // 订单列表
+  {
+    path: '/orderList',
+    name: 'orderList',
+    component: () => import('@/views/orderList.vue')
+  },
+  // 我的
+  {
+    path: '/my',
+    name: 'my',
+    component: () => import('@/views/my.vue')
+  },
+  // 地址管理
+  {
+    path:"/addressList",
+    name:"addressList",
+    component:()=>import("../views/addressList.vue")
+  }, 
   //下面两个页面非本项目
   {
     path: '/home',

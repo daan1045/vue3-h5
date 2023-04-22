@@ -36,7 +36,7 @@ cnpm install less-loader@7.3.0 --save-dev
 postcss.config.js
 vue.config.ts
 
-### 屏幕适配自适应d
+### 屏幕适配自适应
 cnpm i lib-flexible --save
 npm install px2rem-loader --save-dev
 配置地址 https://www.jianshu.com/p/79be33f2ce88

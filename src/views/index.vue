@@ -84,7 +84,12 @@ export default class AboutView extends Vue{
     this.activeIndex = index
   }
   toDetail (id:number):void {
-    console.log(id)
+    this.router.push({
+      name:"goodsDec",
+      query:{
+        id
+      }
+    })
   }
 }
 </script>
